@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+        nodejs: 10
+  build:
+    commands:
+      - echo "npm install time"
+      - npm install time
+      - echo "npm install"
+      - npm install
+      - echo '"cloud formation"'
+      - aws cloudformation package --template template.yaml --s3-bucket deployment-artifacts-backend --output-template post-saml.yaml
+      - "echo done building"

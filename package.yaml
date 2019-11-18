@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'S3-to-Pinpoint'
+Globals:
+  Function:
+    Timeout: 3
+Resources:
+  S3toPinpointLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://deployment-artifacts-backend/a94ac59fb4cd03dbc45bc3fa468f334b
+      Handler: index.js
+      Runtime: nodejs10.x
