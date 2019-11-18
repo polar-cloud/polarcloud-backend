@@ -1,13 +1,23 @@
-***S3-to-Pinpoint-Lambda***
+># ContactRouter Lambda
 
-*S3-to-Pinpoint-Lambda is a node.js Lambda function that, upon putting an object to S3, tranfers JSON formated contacts from s3://polarcloud/contacts/web to Pinpoint as endpoints via pinpoint.updateEndpoint() method.
+*`ContactRouter`* is an `AWS Lambda` function written in `node.js`. Upon putting an object to `S3`, the function tranfers JSON formated contacts from s3://{bucket}/contacts/web to `Pinpoint` as endpoints for marketing and analytics. The function then leverages `Pinpoint` to broadcast notifications to polarCloud Consulting along email and SMS channels when new contacts are registered.
 
-*Instructions on and asset for initializing and running the website on AWS:*
+># Instructions on and asset for initializing and running the website on AWS
+Follow the setup instructions here: https://github.com/polar-cloud/polarcloud-web/blob/master/README.md
 
-The infrastructural components include GitHub, CodeDeploy, CodePipelines, CloudFormation, S3, Pinpoint and IAM. A check-in to GitHub triggers a build in CodePipeline which downloads the repository and runs the `buildspec.yml` build instructions. This in turns launches the lambda and it's code via CloudFormation.
+The infrastructural components include:
+* `GitHub`
+* `Visual Studio Code`
+* `IAM`
+* `S3`
+* `Pinpoint`
+* `AWS CodeDeploy`
+* `AWS CodePipelines`
+* `AWS CloudFormation`
 
-Again, check-ins to this repository go through a CICD pipeline, deploying top production in minutes. 
+># Deployment
+A push to `GitHub` triggers a build in `CodePipeline` which downloads the repository and runs the `buildspec.yml` build instructions. This in turns launches the `Lambda function` and it's code via `CloudFormation`.
 
-This repository is split into two parts. AWS CLI setup scripts and the Lambda code.
+
 
 
