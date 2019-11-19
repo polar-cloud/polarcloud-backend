@@ -141,6 +141,8 @@ Output file name: `polarCloud-Backend-Deploy`
 `Next`
 
 `Create Pipeline`
+
+Watch the deployment.
 <br><br>
 
 ># Configure the Lammbda
@@ -151,7 +153,7 @@ Prefix: `/contacts/web`
 ># Deployment
 A push to `GitHub` triggers a build in `CodePipeline` which downloads the repository and runs the `buildspec.yml` build instructions. This in turns launches the `Lambda function` and it's code via `CloudFormation`.
 
-Simply create a new pipeline in `CodePipeline` with `GitHub` as it's source. Use the defaults for build. Set a deployment action up with a target for `CloudFormation`. Perform a push to `GitHub` and examine the progress in `CodePipeline` url.
+Create a new pipeline in `CodePipeline` with `GitHub` as it's source. Use the defaults for build. Set a deployment action up with a target for `CloudFormation`. Perform a push to `GitHub` and examine the deployment in `CodePipeline` console.
 
 You can test the `ContactRouter` by submitting the Contact form on the landing page of the website. `S3` will have a JSON contact artifact in {bucket-name}/contacts/web. In `Pinpoint`, you can create a target `Segment` with 1 `endpoint`. You should also receive an email and SMS notification.
 
