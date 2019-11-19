@@ -143,6 +143,11 @@ Output file name: `polarCloud-Backend-Deploy`
 `Create Pipeline`
 <br><br>
 
+># Configure the Lammbda
+Open the `Lambda` console and navigate to `ContactRouter`. Add an `S3` trigger:
+Bucket: {bucket-name}
+Prefix: `/contacts/web`
+
 ># Deployment
 A push to `GitHub` triggers a build in `CodePipeline` which downloads the repository and runs the `buildspec.yml` build instructions. This in turns launches the `Lambda function` and it's code via `CloudFormation`.
 
