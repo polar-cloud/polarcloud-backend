@@ -11,9 +11,7 @@ Resources:
   ContactRouterLambda:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: 
-        Bucket: deployment-artifacts-backend
-        Key: Backend.zip
+      CodeUri: ./
       Handler: index.handler
       Runtime: nodejs10.x
       FunctionName: ContactRouter
