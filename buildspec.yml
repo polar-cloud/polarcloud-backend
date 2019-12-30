@@ -10,8 +10,7 @@ phases:
       - echo "npm install"
       - npm install
       - echo '"cloud formation"'
-      - export BUCKET=deployment-artifacts-backend
-      - aws cloudformation package --template-file template.yml --s3-bucket $BUCKET --output-template-file outputtemplate.yml
+      - aws cloudformation package --template-file template.yml --s3-bucket deployment-artifacts-backend --output-template-file outputtemplate.yml
       - "echo done building"
 artifacts:
   type: zip
